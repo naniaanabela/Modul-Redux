@@ -102,3 +102,21 @@ class Table extends Component {
          throw new Error("Unknown filter: " + filter);   
         } 
     }; 
+
+    const mapStateToProps = state => {   
+        return { todos: getVisibleTodos(state.todos, state.visibilityFilter),     
+            visibilityFilter: state.visibilityFilter  }; 
+        }; 
+        
+        const mapDispatchToProps = dispatch => {   
+            return bindActionCreators(     
+                {       
+                    deleteTodo,       
+                    toggleTodo,       
+                    setVisibilityFilter     
+                },     
+                dispatch   
+                ); 
+            }; 
+            
+            export default connect(mapStateToProps, mapDispatchToProps)(Table); 
