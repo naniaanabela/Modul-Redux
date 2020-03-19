@@ -14,7 +14,7 @@
 import { 
     ADD_TODO, REMOVE_TODO, 
     TOGGLE_TODO
-} from '../actions/actionsTypes' 
+} from "../Action/actionTypes";  
  
 const INITIAL_DATA = [] 
  
